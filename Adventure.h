@@ -11,10 +11,8 @@ Version: 0.1
 
 #include "Character.h"
 #include "DM.h"
-#include "Item.h"
-#include <string>
-#include <vector>
-using namespace std;
+#include "Map.h"
+#include "Utility.h"
 
 class Adventure {
 	DM god;

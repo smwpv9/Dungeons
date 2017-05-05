@@ -10,14 +10,13 @@ Version: 0.1
 #define ITEM_H
 
 #include "Abilities.h"
-#include <string>
-using namespace std;
+#include "Utility.h"
 
 class Item {
 private:
 	string name;
 	double value;
-	short weight;
+	double weight;
 	string lore;
 	string location;
 	Abilities* abilities;

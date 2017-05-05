@@ -9,8 +9,7 @@ Version: 0.1
 #ifndef ABILITIES_H
 #define ABILITIES_H
 
-#include <string>
-using namespace std;
+#include "Utility.h"
 
 class Abilities {
 private:

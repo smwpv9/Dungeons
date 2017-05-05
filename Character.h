@@ -11,15 +11,16 @@ Version: 0.1
 
 #include "Item.h"
 #include "Abilities.h"
-#include <string>
-#include <vector>
-using namespace std;
+#include "Utility.h"
+
 
 class Character {
 private:
 	string name;
+	Bigness size;
 	int experience;
 	short stats[6];
+	short ac;
 	string lore;
 	vector<Item> backpack;
 	vector<Abilities> actions;
@@ -27,8 +28,15 @@ public:
 	string getName( );
 	int getExperience( );
 	string getLore( );
+	short getStat( short i );
+	bool checkHit( short a );
+	void printBackpack( );
+	Item removeItem( string n );
+	bool addItem( Item i );
 
-
+	Character( );
+	Character( string n, Bigness b, int exp, short s[ 6 ], short a, string l );
+	~Character( );
 };
 
 

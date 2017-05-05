@@ -12,8 +12,8 @@ Version: 0.1
 
 #include "Character.h"
 #include "Item.h"
-#include <string>
-using namespace std;
+#include "Map.h"
+#include "Utility.h"
 
 class DM {
 private:
