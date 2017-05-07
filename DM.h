@@ -10,9 +10,8 @@ Version: 0.1
 #define DM_H
 
 
-#include "Character.h"
-#include "Item.h"
-#include "Map.h"
+class Character;
+class Map;
 #include "Utility.h"
 
 class DM {
@@ -22,6 +21,10 @@ private:
 	Character* beasts;
 	string notes;
 	Map* maps;
+public:
+	DM( );
+	DM( string n );
+	~DM( );
 };
 
 

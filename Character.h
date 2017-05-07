@@ -9,8 +9,8 @@ Version: 0.1
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include "Item.h"
 #include "Abilities.h"
+#include "Item.h"
 #include "Utility.h"
 
 
@@ -35,7 +35,7 @@ public:
 	bool addItem( Item i );
 
 	Character( );
-	Character( string n, Bigness b, int exp, short s[ 6 ], short a, string l );
+	Character( string n );
 	~Character( );
 };
 

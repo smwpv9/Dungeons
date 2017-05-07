@@ -7,6 +7,7 @@ Version: 0.1
 
 //================== Includes and Defines =====================
 #include "Item.h"
+#include "Abilities.h"
 using namespace std;
 
 

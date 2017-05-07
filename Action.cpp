@@ -6,28 +6,25 @@ Version: 0.1
 =============================================================*/
 
 //================== Includes and Defines =====================
-#ifndef ITEM_H
-#define ITEM_H
-
-class Abilities;
+#include "Action.h"
 #include "Utility.h"
 
-class Item {
-private:
-	string name;
-	double value;
-	double weight;
-	string lore;
-	string location;
-	Abilities* abilities;
+void NotAFunc( ... )
+{
 
-public:
-	string getName( );
-	double getValue( );
-	short getWeight( );
-	string getLore( );
-	string getLocal( );
+}
 
-};
+void attackPierce( ... )
+{
 
-#endif // !ITEM_H
+}
+
+void attackBulgen( ... )
+{
+
+}
+
+void attackSlash( ... )
+{
+
+}

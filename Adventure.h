@@ -9,16 +9,26 @@ Version: 0.1
 #ifndef ADVENTURE_H
 #define ADVENTURE_H
 
-#include "Character.h"
+
+class Character;
+class Map;
+
 #include "DM.h"
-#include "Map.h"
 #include "Utility.h"
 
 class Adventure {
+private:
+	string name;
+	string password;
 	DM god;
 	Character* players;
 	vector<Map> maps;
-	string storyline;
+	vector<string> storyline;
+public:
+	
+	Adventure( );
+	Adventure( string n, string p );
+	~Adventure( );
 };
 
 #endif // !ADVENTURE_H

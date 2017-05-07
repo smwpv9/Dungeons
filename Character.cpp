@@ -7,6 +7,8 @@ Version: 0.1
 
 //================== Includes and Defines =====================
 #include "Character.h"
+#include "Item.h"
+#include "Abilities.h"
 #include <iostream>
 using namespace std;
 
@@ -72,17 +74,12 @@ bool Character::addItem( Item i )
 Character::Character( )
 {
 }
-Character::Character( string n, Bigness b, int exp, short s[ 6 ], short a, string l )
+
+Character::Character( string n )
 {
-	name = n;
-	size = b;
-	experience = exp;
-	int i;
-	for( i = 0; i < 6; i++ )
-		stats[ i ] = s[ i ];
-	ac = a;
-	lore = l;
+
 }
+
 Character::~Character( )
 {
 }

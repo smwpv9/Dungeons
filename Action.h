@@ -6,22 +6,12 @@ Version: 0.1
 =============================================================*/
 
 //================== Includes and Defines =====================
-#ifndef ABILITIES_H
-#define ABILITIES_H
+#ifndef ACTION_H
+#define ACTION_H
 
-#include "Utility.h"
+void NotAFunc( ... );
+void attackPierce( ... );
+void attackBulgen( ... );
+void attackSlash( ... );
 
-class Abilities {
-private:
-	string name;
-public:
-	func action;
-
-	string getName( );
-	bool getShown( );
-	void setShown( );
-	Abilities( string n );
-	~Abilities( );
-};
-
-#endif // !ABILITIES_H
+#endif // !ACTION_H

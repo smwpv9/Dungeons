@@ -12,8 +12,15 @@ Version: 0.1
 #include "Utility.h"
 
 class Map {
+private:
 	string name;
 	vector<string> interest;
+	int hidden;
+public:
+	string getName( );
+	string getInterest( int i );
+	Map( string n, int h );
+	~Map( );
 };
 
 #endif // !UTILITY_H
