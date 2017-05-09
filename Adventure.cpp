@@ -18,7 +18,6 @@ Adventure::Adventure( )
 {
 
 }
-
 Adventure::Adventure( string n, string p )
 {
 	name = n;
@@ -56,7 +55,6 @@ Adventure::Adventure( string n, string p )
 	}
 
 }
-
 Adventure::~Adventure( )
 {
 	delete[ ] players;
@@ -64,13 +62,4 @@ Adventure::~Adventure( )
 		maps.erase( maps.begin( ) );
 	while( storyline.size( ) > 0 )
 		storyline.erase( storyline.begin( ) );
-}
-
-int main( int argc, char** argv )
-{
-	Character one;
-	if( one.addItem( Item( ) ) )
-		cout << "The strain be to much" << endl;
-	cout << "Well it created" << endl;
-	return 0;
 }

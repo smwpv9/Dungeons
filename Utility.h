@@ -26,5 +26,9 @@ enum Background { Acolyte, Charlatan, Criminal, Entertainer, Folk_Hero, Guild_Ar
 	Hermit, Noble, Outlander, Sage, Sailor, Soldier, Urchin };
 enum Class { Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin,
 	Ranger, Rogue, Sorcerer, Warlock, Wizard };
+enum ItemType {LightArmor, MediumArmor, HeavyArmor, Shield, Clothes,
+	SMWeapon, SRWeapon, SilverSWeapon, SRAmmo, SilverSRAmmo,
+	MMWeapon, MRWEapon, SilverMWeapon, MRAmmo, SilverMRAmmo,
+	Gear, Focus, Container, Tools, Food, Trinket};
 
 #endif // !UTILITY_H
