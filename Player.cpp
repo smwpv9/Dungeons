@@ -12,16 +12,11 @@ Version: 0.1
 #include <fstream>
 using namespace std;
 
-
+//=======================  Private  ===========================
 
 string Player::encrypt( string s )
 {
-	return s;
-}
-
-string Player::getName( )
-{
-	return name;
+	return s+" x";
 }
 
 bool Player::changePass( )
@@ -36,7 +31,7 @@ bool Player::changePass( )
 
 		if( encrypt( p ) != password )
 			cout << "That is not your current password." << endl;
-	} while( count < 3 && encrypt(p) != password );
+	} while( count < 3 && encrypt( p ) != password );
 
 	//If count exceeds 3 return to previous screen
 	if( encrypt( p ) != password )
@@ -58,7 +53,7 @@ bool Player::changePass( )
 		if( p != p2 )
 			cout << "I'm sorry those do not match";
 	} while( count < 3 && p != p2 );
-	
+
 	//If count exceeds 3 return to previous screen
 	if( p != p2 )
 	{
@@ -70,6 +65,33 @@ bool Player::changePass( )
 	password = encrypt( p );
 	cout << "Well done. Your password has been changed\n" << endl;
 	return true;
+}
+
+//========================  Public  ===========================
+
+string Player::getName( )
+{
+	return name;
+}
+
+void Player::changeData( )
+{
+	cout << "Data Changed" << endl;
+}
+
+void Player::Adventure( )
+{
+	cout << "Adventuring" << endl;
+}
+
+void Player::NewAdventure( )
+{
+	cout << "Newing" << endl;
+}
+
+void Player::ViewAdventure( )
+{
+	cout << "Need another login" << endl;
 }
 
 Player::Player( bool b )
@@ -96,21 +118,23 @@ Player::Player( bool b )
 		}
 
 		count = 0;
+		in >> ws;
 		getline( in, n );
 		in >> ws;
 		getline( in, p );
 		in.close( );
+		cout << n << "N\n" << p  << "N" << endl;
 
 		do {
 			cout << "Please enter your password: ";
 			cin >> inP;
 			count++;
 
-			if( encrypt( inP ) != password )
+			if(encrypt( inP ).compare( password ) != 0)
 				cout << "That does not match\n" << endl;
-		} while( count < 3 && encrypt( inP ) != password );
+		} while( count < 3 && encrypt( inP ).compare( password ) != 0 );
 
-		if( encrypt( inP ) != password )
+		if( password  != encrypt( inP ) )
 		{
 			cout << "You have exceeded your number of tries\n"
 				<< "Returning to previous screen\n" << endl;
@@ -122,12 +146,47 @@ Player::Player( bool b )
 	}
 	else // new player creating a profile
 	{
-		cout << "Create new\n" << endl;
+		string n, p2;
+		fstream in;
+
+		
+		cout << "What is your display name?" << endl;
+		cin >> ws;
+		getline( cin, n );
+
+		do {
+			cout << "What is your username?" << endl;
+			cin >> username;
+			in.close( );
+			in.open( "Players/" + username + ".txt", fstream::in );
+			
+			if( in.is_open( ) )
+				cout << "I'm sorry. That username has been taken" << endl;
+
+		} while( in.is_open( ) );
+		in.close( );
+
+		do {
+			cout << "What do you want your password to be?" << endl;
+			cin >> p2;
+			cout << "Type that again to make sure we have it." << endl;
+			cin >> password;
+			if( password != p2 )
+				cout << "Those do not match please try again" << endl;
+		} while( password != p2 );
+
+		password = encrypt( p2 );
+		name = n;
 	}
 }
 
 Player::~Player( )
 {
+	if( username == "" )
+	{
+		cout << "Unloading success" << endl;
+		return;
+	}
 	fstream out( "Players/" + username + ".txt", fstream::trunc | fstream::out );
 	if( !out.is_open( ) )
 	{

@@ -19,10 +19,14 @@ private:
 	string password;
 
 	string encrypt( string s );
+	bool changePass( );
 
 public:
 	string getName( );
-	bool changePass( );
+	void changeData( );
+	void Adventure( );
+	void NewAdventure( );
+	void ViewAdventure( );
 	Player( bool b );
 	~Player( );
 };
